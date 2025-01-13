@@ -1,5 +1,8 @@
+const env = process.env.ENV
+
 //token retirado para enviar o codigo
 export default {
     port: 3000,
-    dbUri: "mongodb+srv://joao:<meu token>@cluster0.o1arvpw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    dbUri: "mongodb://localhost:27017/Movies",
+    env: env
 }

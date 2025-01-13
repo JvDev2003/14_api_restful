@@ -1,3 +1,6 @@
+//.env
+require("dotenv").config();
+
 import express from "express";
 import config from "config";
 
@@ -16,10 +19,18 @@ const port = config.get<number>("port")
 //Routes
 import router from "./router";
 
+//Logger
+import Logger from "../config/logger";
+
+//Middleware
+import morganMiddleware from "./middleware/morganMiddleware";
+
+app.use(morganMiddleware)
+
 app.use("/api/", router)
 
 app.listen(port, async () => {
     await db();
 
-    console.log(`Aplicação está rodando na porta: ${port}`)
+    Logger.info(`Aplicação está rodando na porta: ${port}`)
 })
