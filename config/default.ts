@@ -1,8 +1,9 @@
-const env = process.env.ENV
+const env = process.env.ENV;
+const dbUri = process.env.DBURI;
+const port = process.env.PORT;
 
-//token retirado para enviar o codigo
 export default {
-    port: 3000,
-    dbUri: "mongodb://localhost:27017/Movies",
-    env: env
-}
+  port,
+  dbUri,
+  env,
+};
